@@ -1,0 +1,35 @@
+# Core LangChain
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+
+# LLM & Embeddings
+langchain-openai
+langchain-huggingface
+
+# Document Loaders
+pypdf
+docx2txt
+unstructured
+
+# Vector Store
+chromadb
+
+# Utilities
+python-dotenv
+tqdm
+
+# Optional but recommended
+tiktoken
+
+
+pymupdf
+sentence-transformers
+faiss-cpu
+
+langchain-groq
+python-dotenv
+typesense
+
+langgraph
