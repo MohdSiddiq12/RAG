@@ -1,0 +1,77 @@
+[
+  {
+    "_doc": "1706.03762v7.pdf — Attention Is All You Need",
+    "question": "What is the main problem with RNNs that the Transformer architecture solves?",
+    "ground_truth": "RNNs process sequences token by token in order, which prevents parallel computation during training and causes them to struggle with long-range dependencies. The Transformer replaces sequential recurrence with self-attention, allowing all positions in a sequence to be processed simultaneously."
+  },
+  {
+    "_doc": "1706.03762v7.pdf",
+    "question": "What are the three vectors used in self-attention and what does each represent?",
+    "ground_truth": "Self-attention uses three vectors: Query (Q), Key (K), and Value (V). The Query represents the current position asking for information. The Key represents each position being attended to. The Value is the actual information content. Attention scores are computed as softmax(QK^T divided by square root of d_k) multiplied by V."
+  },
+  {
+    "_doc": "1706.03762v7.pdf",
+    "question": "Why is the attention score divided by the square root of d_k?",
+    "ground_truth": "Without scaling, dot products grow large in high dimensions, pushing the softmax function into regions with very small gradients, which makes learning slow. Dividing by the square root of d_k keeps the dot product values in a stable range."
+  },
+  {
+    "_doc": "1706.03762v7.pdf",
+    "question": "What is multi-head attention and why is it useful?",
+    "ground_truth": "Multi-head attention runs the attention mechanism h times in parallel with different learned linear projections of queries, keys, and values. The outputs are concatenated and projected. This allows the model to simultaneously attend to information from different representation subspaces at different positions, capturing richer patterns than a single attention head."
+  },
+  {
+    "_doc": "1706.03762v7.pdf",
+    "question": "What is the role of positional encoding in the Transformer?",
+    "ground_truth": "Because the Transformer has no recurrence or convolution, it has no inherent sense of token order. Positional encodings are added to input embeddings to inject position information. The paper uses sine and cosine functions of different frequencies so that the model can learn to use relative positions."
+  },
+  {
+    "_doc": "1706.03762v7.pdf",
+    "question": "Describe the structure of one Transformer encoder layer.",
+    "ground_truth": "Each encoder layer has two sub-layers: a multi-head self-attention mechanism and a position-wise feed-forward network. Each sub-layer has a residual connection around it followed by layer normalization. The output of each sub-layer is LayerNorm(x + Sublayer(x))."
+  },
+  {
+    "_doc": "1706.03762v7.pdf",
+    "question": "How does the Transformer decoder differ from the encoder?",
+    "ground_truth": "The decoder has three sub-layers per layer instead of two. It adds a masked multi-head self-attention layer, which prevents positions from attending to future positions. It also has an encoder-decoder attention layer where the queries come from the decoder and the keys and values come from the encoder output."
+  },
+  {
+    "_doc": "1706.03762v7.pdf",
+    "question": "What BLEU scores does the Transformer achieve on translation tasks?",
+    "ground_truth": "The Transformer achieves 28.4 BLEU on the WMT 2014 English-to-German translation task and 41.0 BLEU on English-to-French, outperforming all previously published models while requiring significantly less training compute."
+  },
+  {
+    "_doc": "1706.03762v7.pdf",
+    "question": "What is the difference between encoder self-attention and decoder masked self-attention?",
+    "ground_truth": "In encoder self-attention, each position can attend to all positions in the input sequence. In decoder masked self-attention, a causal mask is applied so that each position can only attend to positions up to and including itself, preserving the autoregressive generation property during training."
+  },
+  {
+    "_doc": "1706.03762v7.pdf",
+    "question": "What are the computational complexity advantages of self-attention over recurrent layers?",
+    "ground_truth": "Self-attention connects all positions with a constant number of operations, whereas recurrent layers require O(n) sequential operations. For sequences where the sequence length is less than the representation dimensionality, self-attention layers are faster than recurrent layers and better at learning long-range dependencies."
+  },
+  {
+    "_doc": "Video-Generation.pdf — update ground_truth after reading your document",
+    "question": "What are the main challenges in video generation compared to image generation?",
+    "ground_truth": "UPDATE THIS: Read Video-Generation.pdf and write a 2-3 sentence answer that directly answers this question based on what the document says."
+  },
+  {
+    "_doc": "Video-Generation.pdf — update ground_truth after reading your document",
+    "question": "What model architectures are discussed for video generation?",
+    "ground_truth": "UPDATE THIS: Read Video-Generation.pdf and write what architectures or approaches are described."
+  },
+  {
+    "_doc": "Geometry.pdf — update ground_truth after reading your document",
+    "question": "What are the core geometric concepts covered in the document?",
+    "ground_truth": "UPDATE THIS: Read Geometry.pdf and describe the main concepts it covers."
+  },
+  {
+    "_doc": "ISO.pdf — update ground_truth after reading your document",
+    "question": "What standard or specification does the ISO document define?",
+    "ground_truth": "UPDATE THIS: Read ISO.pdf and describe what standard it covers and its key requirements."
+  },
+  {
+    "_doc": "ISO.pdf — update ground_truth after reading your document",
+    "question": "What are the mandatory compliance requirements described in the ISO document?",
+    "ground_truth": "UPDATE THIS: Read ISO.pdf and list the key mandatory requirements it specifies."
+  }
+]
